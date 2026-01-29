@@ -7,9 +7,7 @@ def checkInput(arg: str = "") -> str:
         while (len(arg) <= 0):
             arg = input("What is the text to count?\n")
         return (arg + '\n')
-    elif (len(sys.argv) > 2):
-        print("AssertionError: more than one argument is provided")
-        return ("")
+    assert (len(sys.argv) <= 2), "AssertionError: more than one argument is provided"
     return (sys.argv[1])
 
 
@@ -44,4 +42,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except AssertionError as error:
+        print(error)
