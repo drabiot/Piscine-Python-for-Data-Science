@@ -7,5 +7,24 @@ def ft_tqdm(lst: range) -> None:
     like the original iterable, but prints a dynamically updating
     progressbar every time a value is requested.
     """
-    
-    return()
+    total = len(lst)
+
+    for i, item in enumerate(lst, 1):
+        yield item
+
+        # largeur dynamique du terminal
+        width = os.get_terminal_size().columns
+
+        # espace réservé pour le texte (pourcentage + compteur)
+        reserved = 20
+        bar_length = width - reserved if width > reserved else 10
+
+        progress = i / total
+        filled = int(bar_length * progress)
+
+        bar = "█" * filled + " " * (bar_length - filled)
+        percent = int(progress * 100)
+
+        print(f"\r{percent:3d}%|{bar}| {i}/{total}", end="", flush=True)
+
+    print()
