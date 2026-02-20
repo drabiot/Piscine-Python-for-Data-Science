@@ -5,7 +5,10 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     bmi: list[int | float] = []
     iteration = min(len(weight), len(height))
     for i in range (iteration):
-        bmi.append(weight[i] / (height[i] * height[i]))
+        if isinstance(weight[i], (int, float)) and isinstance(height[i], (int, float)):
+            bmi.append(weight[i] / (height[i] * height[i]))
+        else:
+            return (bmi)
     return (bmi)
 
 
