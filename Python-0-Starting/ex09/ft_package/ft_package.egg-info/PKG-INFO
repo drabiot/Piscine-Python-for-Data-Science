@@ -1,9 +1,10 @@
 Metadata-Version: 2.1
 Name: ft-package
 Version: 0.0.1
-Summary: UNKNOWN
+Summary: A sample test package
 Home-page: UNKNOWN
 Author: tchartie
+Author-email: tchartie@student.42angouleme.fr
 License: UNKNOWN
 Platform: UNKNOWN
 
