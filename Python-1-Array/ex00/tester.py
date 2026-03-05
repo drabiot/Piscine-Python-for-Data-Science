@@ -23,3 +23,11 @@ bmi = give_bmi(height, weight)
 
 print(bmi, type(bmi))
 print(apply_limit(bmi, 26))
+
+height = [0]
+weight = [0]
+
+bmi = give_bmi(height, weight)
+
+print(bmi, type(bmi))
+print(apply_limit(bmi, 26))
